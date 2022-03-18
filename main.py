@@ -41,7 +41,7 @@ wait = WebDriverWait(driver, 10)
 wait.until(EC.presence_of_all_elements_located)
 
 # ドル円を取得
-message = driver.find_element(by=By.ID, value='USDJPY_top_bid').get_attribute("textContent")
+message = driver.find_element(by=By.XPATH, value="//span[@id='USDJPY_top_bid']").get_attribute("textContent")
 
 # ドライバーを終了させる
 driver.close()
