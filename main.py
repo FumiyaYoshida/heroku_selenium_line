@@ -1,4 +1,4 @@
-
+import time
 import os
 import requests
 # Selenium
@@ -39,6 +39,7 @@ driver.get('https://info.finance.yahoo.co.jp/fx/')
 wait = WebDriverWait(driver, 10)
 # ページが読み込まれるまで待機
 wait.until(EC.presence_of_all_elements_located)
+time.sleep(1)
 
 # ドル円を取得
 message = driver.find_element(by=By.XPATH, value="//span[@id='USDJPY_top_bid']").get_attribute("textContent")
